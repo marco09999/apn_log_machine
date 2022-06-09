@@ -30,8 +30,8 @@ step_3 = []
 head_3 = ["Program Name", "Cycle time (min)", "Execution", "Start Date", "Start time", "End date", "End time", "Post",
           "Force", "Otr", "Machine" ]
 step_3.append(head_3)
-
-
+step_3.append(head_3)
+step_3.append(head_3)
 
 
 
