@@ -6,6 +6,7 @@ def get_date(line):
     else:
         return "UNABLE TO FIND DATE"
 
+
 def get_time(line):
     if "TIME-" in line:
         start = line.index(" - ") + 3
@@ -14,17 +15,20 @@ def get_time(line):
     else:
         return "UNABLE TO FIND TIME"
 
+
 def get_pallet(line):
     if line == str(1) or line == str(2):
         return line
     else:
         return "UNABLE TO FIND PALLET"
 
+
 def get_name(line):
     if ".spf" in line or ".SPF" in line:
         return line
     else:
         return "UNABLE TO FIND NAME"
+
 
 def get_post_version(line):
     if "OPTION FILE" in line:
@@ -34,6 +38,7 @@ def get_post_version(line):
     else:
         return "UNABLE TO FIND POST VERSION"
 
+
 def get_post_date(line):
     if "DATE :" in line:
         start = line.index("DATE :") + 7
@@ -42,10 +47,12 @@ def get_post_date(line):
     else:
         return "UNABLE TO FIND POST DATE"
 
+
 def get_force_version(line):
     start = line.index("VERSION") + 8
     end = start + 5
     return line[start:end]
+
 
 def get_force_date(line):
     day = ["MON","TUE","WED","THU","FRI","SAT","SUN"]
@@ -54,6 +61,7 @@ def get_force_date(line):
             start = line.index(i)
             end = line.index("202") + 4
     return line[start:end]
+
 
 def get_otr(line):
     start = line.index("VERSION") + 8
@@ -116,8 +124,8 @@ def line_decode_step_1(list, index):
             step_1.append(index + 1)
     if "*/*--STOPEND" in list[index]:
         step_1.append("STOPEND")
-
     return step_1
+
 
 def cycle_time_step_2(start_list,end_list):
     start_time_str = start_list[2]
@@ -131,7 +139,7 @@ def cycle_time_step_2(start_list,end_list):
     start_date = start_list[1]
     end_date = end_list[1]
     if start_date != end_date:
-        hr = end_time_h- start_time_h + 24
+        hr = end_time_h - start_time_h + 24
         min = end_time_m - start_time_m
         sec = end_time_s - start_time_s
     else:
@@ -139,10 +147,11 @@ def cycle_time_step_2(start_list,end_list):
         min = end_time_m - start_time_m
         sec = end_time_s - start_time_s
 
-    return round((hr*60) + min + (sec/60),2)
+    return round((hr*60) + min + (sec/60), 2)
 
-def line_decode_step_2(list,index):
-    step_2=[]
+
+def line_decode_step_2(list, index):
+    step_2 = []
     status_start = list[index][0]
     status_end = list[index + 1][0]
     pal_start = list[index][3]
@@ -158,8 +167,11 @@ def line_decode_step_2(list,index):
         step_2.append(list[index][2])
         step_2.append(list[index +1][1])
         step_2.append(list[index +1][2])
-
     return step_2
+
+
+def line_compress(list, index):
+    return
 
 
 

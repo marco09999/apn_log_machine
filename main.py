@@ -1,10 +1,8 @@
 import Header
-
-# Input variables
-path_1 = "P:\Programmes\GROB_7\LOG MACHINE\log_G7.spf"
+from init import *
 
 # Open text file and put each line in a list
-with open(path_1, "r") as tf:
+with open(m1["path"], "r") as tf:
     line_list = tf.read().split("\n")
     tf.close()
 
@@ -25,13 +23,23 @@ for i in range(0, len(step_1)-1):
     if len(Header.line_decode_step_2(step_1, i)) > 1:
         step_2.append(Header.line_decode_step_2(step_1, i))
 
+#for i in step_2:
+ #   print(i)
+
 # Step 3: Compress into single line and number of execution for each unique program
 step_3 = []
 head_3 = ["Program Name", "Cycle time (min)", "Execution", "Start Date", "Start time", "End date", "End time", "Post",
-          "Force", "Otr", "Machine" ]
+          "Force", "Otr", "Machine"]
 step_3.append(head_3)
-step_3.append(head_3)
-step_3.append(head_3)
+for i in range(0, len(step_2)-1):
+    Header.line_compress(step_2, i)
+
+
+
+
+
+
+
 
 
 
