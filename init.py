@@ -2,13 +2,13 @@ m1 = {
     "path": "P:\Programmes\GROB_1\LOG MACHINE\log_G1.spf",
     "type": "GROB",
     "name": "CUGROB-1",
-    "status": False,
+    "status": True,
 }
 m2 = {
     "path": "P:\Programmes\GROB_2\LOG MACHINE\log_G2.spf",
     "type": "GROB",
     "name": "CUGROB-2",
-    "status": False,
+    "status": True,
 }
 m3 = {
     "path": "P:\Programmes\GROB_2\LOG MACHINE\log_G3.spf",
@@ -20,10 +20,10 @@ m4 = {
     "path": "P:\Programmes\GROB_4\LOG MACHINE\log_G4.spf",
     "type": "GROB",
     "name": "CUGROB-4",
-    "status": False,
+    "status": True,
 }
 m5 = {
-    "path": "P:\Echange'\t'esting.spf",
+    "path": "P:\Echange\'testing.spf",
     "type": "GROB",
     "name": "CUGROB-5",
     "status": False,
@@ -32,7 +32,7 @@ m6 = {
     "path": "P:\Programmes\GROB_6\LOG MACHINE\log_G6.spf",
     "type": "GROB",
     "name": "CUGROB-6",
-    "status": False,
+    "status": True,
 }
 m7 = {
     "path": "P:\Programmes\GROB_7\LOG MACHINE\log_G7.spf",

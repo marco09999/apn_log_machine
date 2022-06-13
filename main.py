@@ -44,6 +44,10 @@ for machines in apn_mach:
         for i in step_3:
             print(i)
 
+        print("\n")
+
+
+
 
 
 

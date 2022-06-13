@@ -58,7 +58,7 @@ def get_force_version(line):
 
 
 def get_force_date(line):
-    day = ["MON","TUE","WED","THU","FRI","SAT","SUN"]
+    day = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
     for i in day:
         if i in line:
             start = line.index(i)
