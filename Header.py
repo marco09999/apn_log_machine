@@ -1,3 +1,6 @@
+import statistics
+
+
 def get_date(line):
     if "TIME-" in line:
         start = line.index("TIME-") + 5
@@ -161,18 +164,79 @@ def line_decode_step_2(list, index):
     if status_start == "START" and status_end == "END" and pal_start == pal_stop and name_start == name_stop:
         step_2.append(name_start)
         step_2.append(cycle_time_step_2(list[index], list[index + 1]))
-        step_2.append(list[index][5] + "-" + list[index][6] )
-        step_2.append(list[index][7] + "-" + list[index][7] )
+        step_2.append(list[index][5] + "-" + list[index][6])
+        step_2.append(list[index][7] + "-" + list[index][8])
+        step_2.append(list[index][9])
         step_2.append(list[index][1])
         step_2.append(list[index][2])
-        step_2.append(list[index +1][1])
-        step_2.append(list[index +1][2])
+        step_2.append(list[index + 1][1])
+        step_2.append(list[index + 1][2])
     return step_2
 
 
-def line_compress(list, index):
-    return
+def compress(list):
+    execution_list = []
+    head = ["Program Name", "Cycle time (min)", "Execution", "Start Date", "Start time", "End date", "End time",
+            "Post", "Force", "Otr", "Machine"]
+    execution_list.append(head)
+    for i in range(1, len(list)):
+        execution = []
+        name = list[i][0]
+        post = list[i][2]
+        force = list[i][3]
+        otr = list[i][4]
+        cycle_time = []
+        start_date = []
+        start_time = []
+        end_date = []
+        end_time = []
+        identifier1 = list[i][9]
+        if identifier1 != "read":
+            cycle_time.append(list[i][1])
+            start_date.append(list[i][5])
+            start_time.append(list[i][6])
+            end_date.append(list[i][7])
+            end_time.append(list[i][8])
+            list[i][9] = "read"
+            for j in range(i, len(list)):
+                identifier2 = list[j][9]
+                if identifier2 == identifier1 and identifier1 != "read":
+                    cycle_time.append(list[j][1])
+                    start_date.append(list[j][5])
+                    start_time.append(list[j][6])
+                    end_date.append(list[j][7])
+                    end_time.append(list[j][8])
+                    list[j][9] = "read"
+            nb_exec = len(cycle_time)
+            if nb_exec > 8:
+                ans = round(statistics.median(cycle_time), 2)
+                execution.append(name)
+                execution.append(ans)
+                execution.append(nb_exec)
+                execution.append(start_date[0])
+                execution.append(start_time[0])
+                execution.append(end_date[len(end_date) - 1])
+                execution.append(end_time[len(end_time) - 1])
+                execution.append(post)
+                execution.append(force)
+                execution.append(otr)
+                execution_list.append(execution)
+    return execution_list
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return
 
 
 
