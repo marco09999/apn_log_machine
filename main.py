@@ -1,7 +1,7 @@
 import Header
 from init import *
 for machines in apn_mach:
-    if machines["status"]== "read":
+    if machines["status"]:
         # Open text file and put each line in a list
         with open(machines["path"], "r") as tf:
             line_list = tf.read().split("\n")
@@ -39,6 +39,7 @@ for machines in apn_mach:
         # Add machine Number
         for i in step_3:
             i.append(machines["name"])
+
 
         for i in step_3:
             print(i)
