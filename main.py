@@ -26,15 +26,15 @@ for machines in apn_mach:
 
         # Step 2.5: Add identifier at the end of each execution
         step_2_5 = step_2
-        head_2_5 = ["Name", "Cycle time (min)", "Post", "Force", "Otr", "Start Date", "Start Time", "End Date", "End time",
-                    "Identifier"]
+        head_2_5 = ["Name", "Cycle time (min)", "Post", "Force", "Otr", "Start Date", "Start Time", "End Date",
+                    "End time", "Identifier"]
         step_2_5[0] = head_2_5
         for i in range(1, len(step_2_5)):
             step_2[i].append(step_2[i][0] + "-" + step_2[i][2] + "-" + step_2[i][3] + "-" + step_2[i][4])
 
         # Step 3: Compress into single line and number of execution for each unique program
-        head_3 = ["Program Name", "Cycle time (min)", "Execution", "Start Date", "Start time", "End date", "End time", "Post",
-                  "Force", "Otr", "Machine"]
+        head_3 = ["Program Name", "Cycle time (min)", "Execution", "Start Date", "Start time", "End date", "End time",
+                  "Post", "Force", "Otr", "Machine"]
         step_3 = Header.compress(step_2_5)
         # Add machine Number
         for i in step_3:
