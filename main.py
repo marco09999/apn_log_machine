@@ -46,11 +46,11 @@ for machines in apn_mach:
 
 
 # Print out data to command box
-for mach_dico in apn_mach:
-    print("\n")
-    log = mach_dico["log"]
-    for line in log:
-        print(line)
+#for mach_dico in apn_mach:
+#    print("\n")
+#    log = mach_dico["log"]
+#    for line in log:
+ #       print(line)
 
 # Create an Excel Workbook
 wb = Workbook()
