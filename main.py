@@ -4,7 +4,6 @@ from openpyxl import Workbook
 from datetime import datetime
 import os
 
-
 for machines in apn_mach:
     step_3 = []
     if machines["status"] and machines["type"] == "GROB":
@@ -43,14 +42,6 @@ for machines in apn_mach:
             if i != 0:
                 step_3[i].append(machines["name"])
     machines["log"] = step_3
-
-
-# Print out data to command box
-#for mach_dico in apn_mach:
-#    print("\n")
-#    log = mach_dico["log"]
-#    for line in log:
- #       print(line)
 
 # Create an Excel Workbook
 wb = Workbook()
