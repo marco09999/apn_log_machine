@@ -42,8 +42,6 @@ for machines in apn_mach:
         for i in range(0, len(step_3)):
             if i != 0:
                 step_3[i].append(machines["name"])
-    # Add update time + write to each machine dictionary their log
-    # step_3.append("LAST UPDATE: " + datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
     machines["log"] = step_3
 
 
@@ -62,14 +60,14 @@ for mach_dico in apn_mach:
     ws = wb.create_sheet(mach_dico["name"])
     full_log = mach_dico["log"]
     for i in range(0, len(full_log)):
+        time = "LAST UPDATE: " + datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        ws.cell(row=1, column=12, value=time)
         actual_line = full_log[i]
         row = i+1
         for j in range(0, len(actual_line)):
             actual_value = actual_line[j]
             col = j+1
             ws.cell(row=row, column=col, value=actual_value)
-
-
 
 wb.save("C:\Temp\LOG_MACHINE.xlsx")
 os.startfile("C:\Temp\LOG_MACHINE.xlsx")
