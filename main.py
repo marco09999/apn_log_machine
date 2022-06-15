@@ -1,5 +1,9 @@
 import Header
 from init import *
+import openpyxl
+from datetime import datetime
+
+
 for machines in apn_mach:
     if machines["status"] and machines["type"] == "GROB":
         # Open text file and put each line in a list
@@ -35,7 +39,9 @@ for machines in apn_mach:
         # Add machine Number
         for i in step_3:
             i.append(machines["name"])
-        for i in step_3:
-            print(i)
 
-        print("\n")
+    actual_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    print(actual_time)
+    for i in step_3:
+        print(i)
+    print("\n")
