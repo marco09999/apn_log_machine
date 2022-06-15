@@ -1,10 +1,11 @@
 import Header
 from init import *
-import openpyxl
+from openpyxl import Workbook
 from datetime import datetime
 
 
 for machines in apn_mach:
+    step_3 = []
     if machines["status"] and machines["type"] == "GROB":
         # Open text file and put each line in a list
         with open(machines["path"], "r") as tf:
@@ -39,9 +40,18 @@ for machines in apn_mach:
         # Add machine Number
         for i in step_3:
             i.append(machines["name"])
+    # Add update time + write to each machine dictionary their log
+    step_3.append("LAST UPDATE: " + datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
+    machines["log"] = step_3
 
-    actual_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    print(actual_time)
-    for i in step_3:
-        print(i)
+
+# Print out data to command box
+for mach_dico in apn_mach:
     print("\n")
+    log = mach_dico["log"]
+    for line in log:
+        print(line)
+
+
+
+
