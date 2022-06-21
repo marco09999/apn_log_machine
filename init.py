@@ -27,10 +27,10 @@ m4 = {
     "log": []
 }
 m5 = {
-    "path": "P:\Echange\'testing.spf",
+    "path": "P:\Echange\\testing.spf",
     "type": "GROB",
     "name": "CUGROB-5",
-    "status": False,
+    "status": True,
     "log": []
 }
 m6 = {
