@@ -3,8 +3,6 @@ from init import *
 from openpyxl import Workbook
 from datetime import datetime
 import os
-#ceci est un test github
-
 for machines in apn_mach:
     step_3 = []
     if machines["status"] and machines["type"] == "GROB":
