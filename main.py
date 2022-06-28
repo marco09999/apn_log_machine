@@ -61,8 +61,15 @@ for mach_dico in apn_mach:
             col = j+1
             ws.cell(row=row, column=col, value=actual_value)
 
-wb.save(Path("C:\Temp\LOG_MACHINE.xlsx"))
-os.startfile(Path("C:\Temp\LOG_MACHINE.xlsx"))
+final_path = Path("C:\Temp\LOG_MACHINE.xlsx")
+if os.path.isfile(final_path):
+    wb.save(final_path)
+    os.startfile(final_path)
+else:
+    os.mkdir("C:\Temp")
+    wb.save(final_path)
+    os.startfile(final_path)
+
 
 
 
