@@ -1,47 +1,49 @@
+from pathlib import Path
+
 m1 = {
-    "path": "P:\Programmes\GROB_1\LOG MACHINE\log_G1.spf",
+    "path": Path("P:\Programmes\GROB_1\LOG MACHINE\log_G1.spf"),
     "type": "GROB",
     "name": "CUGROB-1",
     "status": True,
     "log": []
 }
 m2 = {
-    "path": "P:\Programmes\GROB_2\LOG MACHINE\log_G2.spf",
+    "path": Path("P:\Programmes\GROB_2\LOG MACHINE\log_G2.spf"),
     "type": "GROB",
     "name": "CUGROB-2",
     "status": True,
     "log": []
 }
 m3 = {
-    "path": "P:\Programmes\GROB_2\LOG MACHINE\log_G3.spf",
+    "path": Path("P:\Programmes\GROB_2\LOG MACHINE\log_G3.spf"),
     "type": "GROB",
     "name": "CUGROB-3",
     "status": False,
     "log": []
 }
 m4 = {
-    "path": "P:\Programmes\GROB_4\LOG MACHINE\log_G4.spf",
+    "path": Path("P:\Programmes\GROB_4\LOG MACHINE\log_G4.spf"),
     "type": "GROB",
     "name": "CUGROB-4",
     "status": True,
     "log": []
 }
 m5 = {
-    "path": "P:\Echange\\testing.spf",
+    "path": Path("P:\Echange\\testing.spf"),
     "type": "GROB",
     "name": "CUGROB-5",
     "status": True,
     "log": []
 }
 m6 = {
-    "path": "P:\Programmes\GROB_6\LOG MACHINE\log_G6.spf",
+    "path": Path("P:\Programmes\GROB_6\LOG MACHINE\log_G6.spf"),
     "type": "GROB",
     "name": "CUGROB-6",
     "status": True,
     "log": []
 }
 m7 = {
-    "path": "P:\Programmes\GROB_7\LOG MACHINE\log_G7.spf",
+    "path": Path("P:\Programmes\GROB_7\LOG MACHINE\log_G7.spf"),
     "type": "GROB",
     "name": "CUGROB-7",
     "status": True,
