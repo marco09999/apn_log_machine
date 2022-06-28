@@ -222,7 +222,7 @@ def compress(list):
                 execution.append(otr)
                 execution_list.append(execution)
             if nb_exec <= 8:
-                ans = str(round(statistics.mean(cycle_time), 2)) + "*!NA!*"
+                ans = str(round(statistics.mean(cycle_time), 2)) + " *!NA!*"
                 execution.append(name)
                 execution.append(ans)
                 execution.append(nb_exec)
