@@ -221,6 +221,20 @@ def compress(list):
                 execution.append(force)
                 execution.append(otr)
                 execution_list.append(execution)
+            if nb_exec <= 8:
+                ans = str(round(statistics.mean(cycle_time), 2)) + "*!NA!*"
+                execution.append(name)
+                execution.append(ans)
+                execution.append(nb_exec)
+                execution.append(start_date[0])
+                execution.append(start_time[0])
+                execution.append(end_date[len(end_date) - 1])
+                execution.append(end_time[len(end_time) - 1])
+                execution.append(post)
+                execution.append(force)
+                execution.append(otr)
+                execution_list.append(execution)
+
     return execution_list
 
 

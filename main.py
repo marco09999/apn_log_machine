@@ -3,6 +3,11 @@ from init import *
 from openpyxl import Workbook
 from datetime import datetime
 import os
+from tkinter import messagebox
+
+
+
+
 for machines in apn_mach:
     step_3 = []
     if machines["status"] and machines["type"] == "GROB":
@@ -59,8 +64,15 @@ for mach_dico in apn_mach:
             col = j+1
             ws.cell(row=row, column=col, value=actual_value)
 
-wb.save("C:\Temp\LOG_MACHINE.xlsx")
-os.startfile("C:\Temp\LOG_MACHINE.xlsx")
+try:
+    wb.save("C:\Temp\LOG_MACHINE.xlsx")
+    os.startfile("C:\Temp\LOG_MACHINE.xlsx")
+except:
+    print("test")
+
+
+
+
 
 
 
