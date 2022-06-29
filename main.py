@@ -2,6 +2,8 @@ import Header
 from init import *
 from openpyxl import Workbook
 from datetime import datetime
+from tkinter import *
+from tkinter import messagebox
 import os
 
 
@@ -61,14 +63,22 @@ for mach_dico in apn_mach:
             col = j+1
             ws.cell(row=row, column=col, value=actual_value)
 
-final_path = Path("C:\Temp\LOG_MACHINE.xlsx")
-if os.path.isfile(final_path):
+
+final_dir = Path("C:\Temp")
+final_path = Path("C:\Temp\log_mach_siems_apn.xlsx")
+if os.path.isdir(final_dir):
     wb.save(final_path)
     os.startfile(final_path)
+
 else:
-    os.mkdir("C:\Temp")
+    os.mkdir(final_dir)
     wb.save(final_path)
     os.startfile(final_path)
+
+
+
+
+
 
 
 
