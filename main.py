@@ -4,6 +4,7 @@ from openpyxl import Workbook
 from openpyxl.styles.alignment import Alignment
 from datetime import datetime
 import os
+from pathlib import Path
 
 
 for machines in apn_mach:
@@ -71,9 +72,16 @@ for mach_dico in apn_mach:
 del wb["Sheet"]
 final_dir = Path("C:\Temp")
 final_path = Path("C:\Temp\log_machine_apn_GROB.xlsx")
+
 if os.path.isdir(final_dir):
     wb.save(final_path)
 else:
     os.mkdir(final_dir)
     wb.save(final_path)
+
 os.startfile(final_path)
+use_log = open(Path("P:\Echange\Marc-Aurèle Archambault\LOG_MACHINE\LOG_USE.txt"), "a")
+use_log.write(os.path.join(os.path.expandvars("%userprofile%")) + "  " + time)
+use_log.write("\n")
+use_log.close()
+
