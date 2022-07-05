@@ -15,7 +15,7 @@ m2 = {
     "log": []
 }
 m3 = {
-    "path": Path("P:\Programmes\GROB_2\LOG MACHINE\log_G3.spf"),
+    "path": Path("P:\Programmes\GROB_3\LOG MACHINE\log_G3.spf"),
     "type": "GROB",
     "name": "CUGROB-3",
     "status": True,
