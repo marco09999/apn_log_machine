@@ -1,4 +1,5 @@
 import statistics
+from openpyxl.styles import PatternFill, Border, Side, Alignment, Protection, Font
 
 
 def get_date(line):
@@ -236,6 +237,34 @@ def compress(list):
                 execution_list.append(execution)
 
     return execution_list
+
+
+def format_data(ws):
+    ws.column_dimensions['A'].width = 30
+    ws.column_dimensions['B'].width = 17.4
+    ws.column_dimensions['C'].width = 10.43
+    ws.column_dimensions['D'].width = 9.43
+    ws.column_dimensions['E'].width = 9.57
+    ws.column_dimensions['F'].width = 9.43
+    ws.column_dimensions['G'].width = 9.57
+    ws.column_dimensions['H'].width = 38.14
+    ws.column_dimensions['I'].width = 30
+    ws.column_dimensions['J'].width = 25
+    ws.column_dimensions['K'].width = 11
+    ws.column_dimensions['L'].width = 38
+    ws.cell(row=1, column=1).font = Font(bold=True)
+    ws.cell(row=1, column=2).font = Font(bold=True)
+    ws.cell(row=1, column=3).font = Font(bold=True)
+    ws.cell(row=1, column=4).font = Font(bold=True)
+    ws.cell(row=1, column=5).font = Font(bold=True)
+    ws.cell(row=1, column=6).font = Font(bold=True)
+    ws.cell(row=1, column=7).font = Font(bold=True)
+    ws.cell(row=1, column=8).font = Font(bold=True)
+    ws.cell(row=1, column=9).font = Font(bold=True)
+    ws.cell(row=1, column=10).font = Font(bold=True)
+    ws.cell(row=1, column=11).font = Font(bold=True)
+    ws.cell(row=1, column=12).font = Font(bold=True)
+    return
 
 
 

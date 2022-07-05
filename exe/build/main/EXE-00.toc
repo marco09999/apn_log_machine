@@ -2,7 +2,7 @@
  False,
  False,
  False,
- 'C:\\Users\\maarchambault\\PycharmProjects\\LOG_MACHINE\\logo.ico',
+ 'C:\\Users\\maarchambault\\PycharmProjects\\LOG_MACHINE\\log_machine.ico',
  None,
  False,
  False,
@@ -92,7 +92,7 @@
  [],
  False,
  False,
- 1656436122,
+ 1656966870,
  [('runw.exe',
    'C:\\Users\\maarchambault\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\runw.exe',
    'EXECUTABLE')])

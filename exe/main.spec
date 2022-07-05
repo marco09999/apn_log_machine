@@ -41,5 +41,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon='C:\\Users\\maarchambault\\PycharmProjects\\LOG_MACHINE\\logo.ico',
+    icon='C:\\Users\\maarchambault\\PycharmProjects\\LOG_MACHINE\\log_machine.ico',
 )

@@ -18,7 +18,7 @@ m3 = {
     "path": Path("P:\Programmes\GROB_2\LOG MACHINE\log_G3.spf"),
     "type": "GROB",
     "name": "CUGROB-3",
-    "status": False,
+    "status": True,
     "log": []
 }
 m4 = {

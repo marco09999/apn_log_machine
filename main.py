@@ -1,9 +1,8 @@
 import Header
 from init import *
 from openpyxl import Workbook
+from openpyxl.styles.alignment import Alignment
 from datetime import datetime
-from tkinter import *
-from tkinter import messagebox
 import os
 
 
@@ -16,15 +15,16 @@ for machines in apn_mach:
             tf.close()
         # Step 1: Transform START and END BLOC into lines
         step_1 = []
-        head_1 = ["Status", "Date", "Time", "Pallet", "Name", "Post Version", "Post Date", "Force Version", "Force Date", "Otr",
-                  "Line in text file"]
+        head_1 = ["Status", "Date", "Time", "Pallet", "Name", "Post Version", "Post Date", "Force Version",
+                  "Force Date", "Otr", "Line in text file"]
         step_1.append(head_1)
         for i in range(0, len(line_list)):
             if len(Header.line_decode_step_1(line_list, i)) > 1:
                 step_1.append(Header.line_decode_step_1(line_list, i))
         # Step 2: Transform START and END lines into execution
         step_2 = []
-        head_2 = ["Name", "Cycle time (min)", "Post", "Force", "Otr", "Start Date", "Start Time", "End Date", "End time"]
+        head_2 = ["Name", "Cycle time (min)", "Post", "Force", "Otr", "Start Date",
+                  "Start Time", "End Date", "End time"]
         step_2.append(head_2)
         for i in range(0, len(step_1)-1):
             if len(Header.line_decode_step_2(step_1, i)) > 1:
@@ -52,41 +52,28 @@ wb = Workbook()
 # For each machine, create a sheet and write step_3 to the sheet
 for mach_dico in apn_mach:
     ws = wb.create_sheet(mach_dico["name"])
+    Header.format_data(ws)
     full_log = mach_dico["log"]
+
     for i in range(0, len(full_log)):
         time = "LAST UPDATE: " + datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         ws.cell(row=1, column=12, value=time)
+        ws.cell(row=1, column=12).alignment = Alignment(horizontal="center")
         actual_line = full_log[i]
         row = i+1
         for j in range(0, len(actual_line)):
             actual_value = actual_line[j]
             col = j+1
             ws.cell(row=row, column=col, value=actual_value)
+            ws.cell(row=row, column=col).alignment = Alignment(horizontal="center")
 
-
+# Format Excel Workbook and show data
+del wb["Sheet"]
 final_dir = Path("C:\Temp")
-final_path = Path("C:\Temp\log_mach_siems_apn.xlsx")
+final_path = Path("C:\Temp\log_machine_apn_GROB.xlsx")
 if os.path.isdir(final_dir):
     wb.save(final_path)
-    os.startfile(final_path)
-
 else:
     os.mkdir(final_dir)
     wb.save(final_path)
-    os.startfile(final_path)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+os.startfile(final_path)
