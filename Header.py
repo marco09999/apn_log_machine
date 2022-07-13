@@ -1,6 +1,6 @@
 import statistics
 from openpyxl.styles import PatternFill, Border, Side, Alignment, Protection, Font
-
+from datetime import datetime
 
 def get_date(line):
     if "TIME-" in line:
@@ -214,10 +214,10 @@ def compress(list):
                 execution.append(name)
                 execution.append(ans)
                 execution.append(nb_exec)
-                execution.append(start_date[0])
-                execution.append(start_time[0])
-                execution.append(end_date[len(end_date) - 1])
-                execution.append(end_time[len(end_time) - 1])
+                execution.append(datetime.strptime(start_date[0], '%Y/%m/%d').strftime('%Y/%m/%d'))
+                execution.append(datetime.strptime(start_time[0], '%H:%M:%S').strftime('%H:%M:%S'))
+                execution.append(datetime.strptime(end_date[len(end_date) - 1], '%Y/%m/%d').strftime('%Y/%m/%d'))
+                execution.append(datetime.strptime(end_time[len(end_time) - 1], '%H:%M:%S').strftime('%H:%M:%S'))
                 execution.append(post)
                 execution.append(force)
                 execution.append(otr)
@@ -227,10 +227,10 @@ def compress(list):
                 execution.append(name)
                 execution.append(ans)
                 execution.append(nb_exec)
-                execution.append(start_date[0])
-                execution.append(start_time[0])
-                execution.append(end_date[len(end_date) - 1])
-                execution.append(end_time[len(end_time) - 1])
+                execution.append(datetime.strptime(start_date[0], '%Y/%m/%d').strftime('%Y/%m/%d'))
+                execution.append(datetime.strptime(start_time[0], '%H:%M:%S').strftime('%H:%M:%S'))
+                execution.append(datetime.strptime(end_date[len(end_date) - 1], '%Y/%m/%d').strftime('%Y/%m/%d'))
+                execution.append(datetime.strptime(end_time[len(end_time) - 1], '%H:%M:%S').strftime('%H:%M:%S'))
                 execution.append(post)
                 execution.append(force)
                 execution.append(otr)
@@ -241,12 +241,12 @@ def compress(list):
 
 def format_data(ws):
     ws.column_dimensions['A'].width = 30
-    ws.column_dimensions['B'].width = 17.4
-    ws.column_dimensions['C'].width = 10.43
-    ws.column_dimensions['D'].width = 9.43
-    ws.column_dimensions['E'].width = 9.57
-    ws.column_dimensions['F'].width = 9.43
-    ws.column_dimensions['G'].width = 9.57
+    ws.column_dimensions['B'].width = 20
+    ws.column_dimensions['C'].width = 14
+    ws.column_dimensions['D'].width = 14
+    ws.column_dimensions['E'].width = 14
+    ws.column_dimensions['F'].width = 14
+    ws.column_dimensions['G'].width = 14
     ws.column_dimensions['H'].width = 38.14
     ws.column_dimensions['I'].width = 30
     ws.column_dimensions['J'].width = 25
