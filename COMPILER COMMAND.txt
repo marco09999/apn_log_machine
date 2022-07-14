@@ -1,0 +1,1 @@
+pyinstaller --onefile -w --icon=C:\Users\maarchambault\PycharmProjects\LOG_MACHINE\log_machine.ico C:\Users\maarchambault\PycharmProjects\LOG_MACHINE\main.py

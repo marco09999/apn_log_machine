@@ -1,0 +1,14 @@
+Ajouter les Index
+Ajouter la DMG
+Le bouton "show full data" qui permet de montrer un graphique complet de toutes les datas récoltés (permet de séparer par job)
+Auto sort pour afficher le plus récent en bas
+Mettre en highlight les programmes qui ont été terminé aujourd'hui
+Interface graphique + code qui s'update au minute
+Status actuel de la machine (Je roule actuellement le programme X)
+Progression du machinage (je roule actuellement le programme X et je suis rendu à 50%) --> 
+	J'écris la valeur de la variable toolpath name + heure d'écriture dans le log de transfert à chaque fois queje croise un cycle 832.
+	Éventuellement je sais chaque programme à combien de toolpath et combien de temps chacun prenne
+	Je peux donc afficher que je suis à 43% de la pièce en terme de temps.
+Le bouton "show full data" qui permet de montrer un graphique complet de toutes les datas récoltés (permet de séparer par job)
+
+
