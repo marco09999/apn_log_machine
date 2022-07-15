@@ -1,6 +1,8 @@
 import statistics
 from openpyxl.styles import PatternFill, Border, Side, Alignment, Protection, Font
 from datetime import datetime
+from operator import itemgetter
+
 
 def get_date(line):
     if "TIME-" in line:
@@ -177,9 +179,6 @@ def line_decode_step_2(list, index):
 
 def compress(list):
     execution_list = []
-    head = ["Program Name", "Cycle time (min)", "Execution", "Start Date", "Start time", "End date", "End time",
-            "Post", "Force", "Otr", "Machine"]
-    execution_list.append(head)
     for i in range(1, len(list)):
         execution = []
         name = list[i][0]
@@ -236,7 +235,12 @@ def compress(list):
                 execution.append(otr)
                 execution_list.append(execution)
 
-    return execution_list
+    sorted_execution_list = sorted(execution_list, key=itemgetter(5))
+    head = ["Program Name", "Cycle time (min)", "Execution", "Start Date", "Start time", "End date", "End time",
+            "Post", "Force", "Otr", "Machine"]
+    sorted_execution_list.insert(0, head)
+
+    return sorted_execution_list
 
 
 def format_data(ws):

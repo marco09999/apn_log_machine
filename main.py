@@ -6,8 +6,6 @@ from datetime import datetime
 import os
 from pathlib import Path
 
-
-
 for machines in apn_mach:
     step_3 = []
     if machines["status"] and machines["type"] == "GROB":

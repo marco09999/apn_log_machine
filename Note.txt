@@ -1,8 +1,26 @@
+Phase 1: avoir les 7 grob connectées (FAIT)
+
+Phase 2: Forcer l'utilisation car sinon sert à rien (comment on peut aider pour de vrai la production)
+	Éviter les silos de travail pcq après ça on a trop de silo et il y a une batailles de système
+	Donner de la bonne donnée pour permettre des meilleurs décision de la direction
+	Rencontre d'introduction à l'équipe système (inclure Yves pour mettre du gaz dans le feu)
+	starter lorsque les vacances ce sont calmé
+	30 min de meeting réccurent pour faire un petit pas à chaque fois.
+	tenir la cadence pendant un bouton (18 minimum)
+	S'assurer que l'habitude est encré (APN Wide à le réflexe d'aller voir les temps de cycle là)
+	Temps de cycle = Log machine à tout coup
+	
+Phase 3:
 Ajouter les Index
+
 Ajouter la DMG
+
 Le bouton "show full data" qui permet de montrer un graphique complet de toutes les datas récoltés (permet de séparer par job)
+
 Auto sort pour afficher le plus récent en bas
+
 Mettre en highlight les programmes qui ont été terminé aujourd'hui
+
 Interface graphique + code qui s'update au minute
 Status actuel de la machine (Je roule actuellement le programme X)
 Progression du machinage (je roule actuellement le programme X et je suis rendu à 50%) --> 
